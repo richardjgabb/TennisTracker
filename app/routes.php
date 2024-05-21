@@ -1,6 +1,7 @@
 <?php
 declare(strict_types=1);
 
+use App\Controllers\API\GetPlayerController;
 use App\Controllers\CoursesAPIController;
 use Slim\App;
 use Slim\Views\PhpRenderer;
@@ -16,6 +17,6 @@ return function (App $app) {
         return $renderer->render($response, "index.php", $args);
     });
 
-    $app->get('/courses', CoursesAPIController::class);
+    $app->get('/playerById', GetPlayerController::class);
 
 };
